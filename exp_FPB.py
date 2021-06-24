@@ -49,13 +49,13 @@ def build_engine(cfg, datamanager, model, optimizer, scheduler):
                 use_gpu=cfg.use_gpu,
                 label_smooth=cfg.loss.softmax.label_smooth
             )
-        if cfg.loss.name == 'engine_AFPB':
+        if cfg.loss.name == 'engine_FPB':
             if cfg.loss.div_reg:
                 div_penalty = OFPenalty(cfg.loss.div_reg_beta)
             else:
                 div_penalty = None
 
-            engine = torchreid.engine.ImageAFPBEngine(
+            engine = torchreid.engine.ImageFPBEngine(
                 datamanager,
                 model,
                 optimizer,

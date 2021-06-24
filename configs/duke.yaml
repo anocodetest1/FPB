@@ -1,5 +1,5 @@
 model:
-  name: 'afpb'
+  name: 'fpb'
   pretrained: True
 
 data:
@@ -18,7 +18,7 @@ sampler:
   num_instances: 4
 
 loss:
-  name: 'engine_AFPB'
+  name: 'engine_FPB'
   softmax:
     label_smooth: True
   triplet:

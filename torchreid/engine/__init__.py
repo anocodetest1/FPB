@@ -5,7 +5,7 @@ from .engine import Engine
 
 from .image import ImageSoftmaxEngine
 from .image import ImageTripletEngine
-from .image import ImageAFPBEngine
+from .image import ImageFPBEngine
 
 from .video import VideoSoftmaxEngine
 from .video import VideoTripletEngine

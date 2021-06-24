@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 from __future__ import division
 
-__all__ = ['afpb']
+__all__ = ['fpb']
 
 import torch
 from torch import nn
@@ -95,9 +95,9 @@ class FPN(nn.Module):
         return y, reg_feat        
 
 
-class AFPB(nn.Module):
+class FPB(nn.Module):
     def __init__(self, num_classes, loss=None, **kwargs):
-        super(AFPB, self).__init__()
+        super(FPB, self).__init__()
 
         resnet_ = resnet50(pretrained=True)
 
@@ -212,7 +212,7 @@ class AFPB(nn.Module):
 
         if self.loss == 'softmax':
             return y
-        elif self.loss == 'engine_AFPB':
+        elif self.loss == 'engine_FPB':
             f = []
             f.append(F.normalize(f_l4_train, p=2, dim=1).view(bs, -1)) 
             f.append(F.normalize(f_parts, p=2, dim=1).view(bs, -1))
@@ -224,8 +224,8 @@ class AFPB(nn.Module):
             raise KeyError("Unsupported loss: {}".format(self.loss))
 
 
-def afpb(num_classes, loss='softmax', pretrained=True, **kwargs):
-    model = AFPB(num_classes=num_classes, loss=loss, **kwargs)
+def fpb(num_classes, loss='softmax', pretrained=True, **kwargs):
+    model = FPB(num_classes=num_classes, loss=loss, **kwargs)
 
     return model
 

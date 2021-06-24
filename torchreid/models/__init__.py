@@ -2,14 +2,14 @@ from __future__ import absolute_import
 
 import torch
 
-from .afpb import *
+from .fpb import *
 
 
 __model_factory = {
     # image classification models
     # lightweight models
     # reid-specific models
-    'afpb': afpb
+    'fpb': fpb
 }
 
 
@@ -51,3 +51,4 @@ def build_model(name, num_classes, loss='softmax', pretrained=True, use_gpu=True
         pretrained=pretrained,
         use_gpu=use_gpu
     )
+

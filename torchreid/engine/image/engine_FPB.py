@@ -14,14 +14,14 @@ from torchreid.utils import AverageMeter, open_specified_layers, open_all_layers
 from torchreid import metrics
 
 
-class ImageAFPBEngine(engine.Engine):
+class ImageFPBEngine(engine.Engine):
     r"""PcbAttentionEngine
     """   
 
     def __init__(self, datamanager, model, optimizer, margin=0.3,
                  weight_t=1, weight_x=1, scheduler=None, use_gpu=True,
                  label_smooth=True, div_penalty=None, div_start=0):
-        super(ImageAFPBEngine, self).__init__(datamanager, model, optimizer, scheduler, use_gpu)
+        super(ImageFPBEngine, self).__init__(datamanager, model, optimizer, scheduler, use_gpu)
 
         self.weight_t = weight_t
         self.weight_x = weight_x
