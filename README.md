@@ -31,9 +31,4 @@ To train and evaluate FPB model on DukeMTMC dataset:
 python exp_FPB.py --config-file ./configs/duke.yaml --root /path/to/your/data
 ```
 
-To train and evaluate FPB model on msmt17 dataset:
-```
-python exp_FPB.py --config-file ./configs/msmt17.yaml --root /path/to/your/data
-```
-
 All records and log file are in the `./log/` directory.
